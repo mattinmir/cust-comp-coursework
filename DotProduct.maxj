@@ -1,0 +1,30 @@
+https://github.com/custom-computing-ic/papaa14/blob/master/solutions/DotProductSolution/EngineCode/src/dotproduct/DotProductKernel.maxj
+
+
+
+DFEVar a = io.input("a", dfeFloat(8,24));
+DFEVar b = io.input("b", dfeFloat(8,24));
+
+DFEVar mult = a*b;
+
+io.output("z", mult, DFEFloat(8,24));
+
+
+
+
+
+
+
+
+DFEVectorType<DFEVar> vectorType = new DFEVectorType<DFEVar>(type, streamWidth);
+
+		// Input: 2 vectors to mult
+		DFEVector<DFEVar> x = io.input("x", vectorType);
+		DFEVector<DFEVar> y = io.input("y", vectorType);
+
+		DFEVar sum = constant.var(type, 0);
+		for (int i = 0; i < streamWidth; i++) {
+			sum += x[i] * y[i];
+		}
+
+		io.output("s", sum, type);
