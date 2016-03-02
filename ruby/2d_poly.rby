@@ -1,0 +1,6 @@
+INCLUDE "prelude.rby".
+
+multx = pi1^~1 ; snd "x" ; mult.
+poly = rdr 3 (snd multx ; add).
+
+current = poly.
