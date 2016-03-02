@@ -1,6 +1,19 @@
 https://github.com/custom-computing-ic/papaa14/blob/master/solutions/DotProductSolution/EngineCode/src/dotproduct/DotProductKernel.maxj
 
 
+DFEVar sum = 0;
+for(int i = 0; i < N; i++)
+{
+	DFEVar a = io.input("a"+i, dfeFloat(8,24));
+	DFEVar b = io.input("b"+i, dfeFloat(8,24));
+
+
+	sum += a*b;
+
+
+}
+io.output("sum", sum, DFEFloat(8,24));
+
 
 DFEVar a = io.input("a", dfeFloat(8,24));
 DFEVar b = io.input("b", dfeFloat(8,24));
@@ -8,11 +21,6 @@ DFEVar b = io.input("b", dfeFloat(8,24));
 DFEVar mult = a*b;
 
 io.output("z", mult, DFEFloat(8,24));
-
-
-
-
-
 
 
 
